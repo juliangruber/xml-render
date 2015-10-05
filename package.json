@@ -1,0 +1,13 @@
+{
+  "name": "xml-render",
+  "version": "0.0.0",
+  "description": "Render XML parsed by xml-parser",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": "juliangruber/xml-render",
+  "devDependencies": {
+    "tape": "^4.2.1"
+  },
+  "license": "MIT"
+}
