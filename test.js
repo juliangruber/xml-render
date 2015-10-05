@@ -86,6 +86,22 @@ test('node', function(t){
       children: [{ name: 'jazz', content: 'pop' }]
     }]
   }), '<foo beep="boop">\n\t<love>\n\t\t<jazz>pop</jazz>\n\t</love>\n</foo>');
+  t.equal(render.node({
+    declaration: {
+      attributes: { foo: 'bar' }
+    },
+    root: { name: 'beep', content: 'boop' }    
+  }), '<?xml foo="bar"?>\n<beep>boop</beep>');
+  t.end();
+});
+
+test('document', function(t){
+  t.equal(render.document({
+    declaration: {
+      attributes: { foo: 'bar' }
+    },
+    root: { name: 'beep', content: 'boop' }    
+  }), '<?xml foo="bar"?>\n<beep>boop</beep>');
   t.end();
 });
 

@@ -31,6 +31,7 @@ exports.leaf = function(node){
 };
 
 exports.node = function(node){
+  if (node.root) return exports.document(node);
   if (!node.children || !node.children.length) return exports.leaf(node);
 
   return exports.tagOpen(node) + '\n'
@@ -39,3 +40,12 @@ exports.node = function(node){
       }).join('\n') + '\n'
     + exports.tagClose(node);
 };
+
+exports.document = function(node){
+  return exports.declaration({
+        name: 'xml',
+        attributes: node.declaration.attributes
+      }) + '\n'
+    + exports.node(node.root);
+};
+

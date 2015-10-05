@@ -61,6 +61,15 @@ render.node({
           <jazz>pop</jazz>
         </love>
       </foo>
+
+render.document({
+  declaration: {
+    attributes: { foo: 'bar' }
+  },
+  root: { name: 'beep', content: 'boop' }    
+})
+// => <?xml foo="bar"?>
+      <beep>boop</beep>
 ```
 
 ## Installation
@@ -77,6 +86,7 @@ $ npm install xml-render
 ### .tagClose(node)
 ### .leaf(node)
 ### .node(node)
+### .document(node)
 
 ## License
 
