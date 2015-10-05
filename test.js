@@ -46,3 +46,15 @@ test('tagClose', function(t){
   t.end();
 });
 
+test('leaf', function(t){
+  t.equal(render.leaf({ name: 'foo', content: 'bar' }), '<foo>bar</foo>');
+  t.equal(render.leaf({
+    name: 'foo',
+    content: 'bar',
+    attributes: {
+      beep: 'boop'
+    }
+  }), '<foo beep="boop">bar</foo>');
+  t.end();
+});
+

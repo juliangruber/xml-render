@@ -38,6 +38,15 @@ render.tagClose({
   name: 'foo'
 });
 // => </foo>
+
+render.leaf({
+  name: 'foo',
+  content: 'bar',
+  attributes: {
+    beep: 'boop'
+  }
+});
+// => <foo beep="boop">bar</foo>
 ```
 
 ## Installation

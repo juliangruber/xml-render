@@ -25,3 +25,7 @@ exports.attributes = function(node){
 exports.tagClose = function(node){
   return fmt('</%s>', node.name);
 };
+
+exports.leaf = function(node){
+  return exports.tagOpen(node) + node.content + exports.tagClose(node);
+};
