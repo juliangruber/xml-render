@@ -5,7 +5,7 @@ exports.tagOpen = function(node){
 };
 
 exports.declaration = function(node){
-  return fmt('<?%s%s?>', node.name, renderAttributes(node));
+  return fmt('<?xml%s?>', renderAttributes(node));
 };
 
 function renderAttributes(node){
@@ -42,10 +42,7 @@ exports.node = function(node){
 };
 
 exports.document = function(node){
-  return exports.declaration({
-        name: 'xml',
-        attributes: node.declaration.attributes
-      }) + '\n'
+  return exports.declaration(node.declaration) + '\n'
     + exports.node(node.root);
 };
 

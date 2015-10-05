@@ -14,14 +14,13 @@ test('tagOpen', function(t){
 });
 
 test('declaration', function(t){
-  t.equal(render.declaration({ name: 'foo' }), '<?foo?>');
+  t.equal(render.declaration({}), '<?xml?>');
   t.equal(render.declaration({
-    name: 'foo',
     attributes: {
       bar: 'baz',
       beep: 'boop'
     }
-  }), '<?foo bar="baz" beep="boop"?>');
+  }), '<?xml bar="baz" beep="boop"?>');
   t.end();
 });
 

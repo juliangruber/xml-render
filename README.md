@@ -18,13 +18,12 @@ render.tagOpen({
 // => <foo bar="baz" beep="boop">
 
 render.declaration({
-  name: 'foo',
   attributes: {
     bar: 'baz',
     beep: 'boop'
   }
 });
-// => <?foo bar="baz" beep="boop"?>
+// => <?xml bar="baz" beep="boop"?>
 
 render.attributes({
   attributes: {
