@@ -61,6 +61,7 @@ $ npm install xml-render
 ### .declaration(node)
 ### .attributes(node)
 ### .tagClose(node)
+### .leaf(node)
 
 ## License
 
