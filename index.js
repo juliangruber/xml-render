@@ -29,3 +29,13 @@ exports.tagClose = function(node){
 exports.leaf = function(node){
   return exports.tagOpen(node) + node.content + exports.tagClose(node);
 };
+
+exports.node = function(node){
+  if (!node.children || !node.children.length) return exports.leaf(node);
+
+  return exports.tagOpen(node) + '\n'
+    + node.children.map(function(child){
+        return exports.node(child).replace(/^/gm, '\t');
+      }).join('\n') + '\n'
+    + exports.tagClose(node);
+};

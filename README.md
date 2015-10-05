@@ -47,6 +47,20 @@ render.leaf({
   }
 });
 // => <foo beep="boop">bar</foo>
+
+render.node({
+  name: 'foo',
+  attributes: { beep: 'boop' },
+  children: [{
+    name: 'love',
+    children: [{ name: 'jazz', content: 'pop' }]
+  }]
+});
+// => <foo beep="boop">
+        <love>
+          <jazz>pop</jazz>
+        </love>
+      </foo>
 ```
 
 ## Installation
@@ -62,6 +76,7 @@ $ npm install xml-render
 ### .attributes(node)
 ### .tagClose(node)
 ### .leaf(node)
+### .node(node)
 
 ## License
 
