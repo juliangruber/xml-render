@@ -1,6 +1,6 @@
 {
   "name": "xml-render",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Render XML parsed by xml-parser",
   "scripts": {
     "test": "make test"
